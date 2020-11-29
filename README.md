@@ -46,34 +46,39 @@ But usually you start with the basics: The first case in every test suite should
 
 ### Check basic elements
 
-- check if the title element (the headline "Instacat") exists on the page
+- check if the h1 element (the headline "Instacat") exists on the page
 - check if there are (cat) images on the page
+- check if the title (meta tag) is set correctly
 
 > Run the test against v1
 > Imagine a deployment happened -> run again against v2
+[change className of h1 element]
 
 ### Test the like feature
 
 ...
 
 > Run the test against v2
-> Imagine a deployment happened -> run again against v3
-> Imagine you run the test regularly -> run again against v4
-
+> Imagine a deployment happened -> run again against v3 
+[break like feature to increment by > 1]
 
 ----
 ## Bonus Exercises
 
-### Test the adding cats feature
+### Check if the Copyright year is correct
+Is it showing the current year?
 
-...
+### Test the adding cats feature
+Find your newly added cat on the page
 
 ### Test the "Not a Cat" Button
 
 Allows you to flag images that are not cats to get them removed.
+Remove a cat and check that it is no longer there.
 
 ### Test for no missing translations
 
 -  Our page supports multiple languages. This means texts on our page are placeholder strings (=translation keys) in code that get replaced by the real content in different languages.
 - If a key does not have a translation it looks like this: ...
 - we don't want this to be shown to users, so we want a test cases, that looks for this on the whole page
+[missing translation on hover tooltip text]
