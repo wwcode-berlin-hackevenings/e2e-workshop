@@ -25,7 +25,12 @@ run them against different version ("deployments") of the page
 
 ## Setup
 
-- link to different sections / files for setup with JS, Python...
+If your are using Javascript, go to the [Javascript Selenium Template](https://github.com/wwcode-berlin-hackevenings/selenium-javascript-template) and create your own repo from it.
+Follow the instructions in th template repo to setup your local enviroment to be able to run the tests.
+If that does now work, the repo also has a Github Action workflow setup to run the tests as an Action.
+This is less fun though because you don't get to see the browser automation in action!
+
+As soon as you are able to run the example test, you are good to go for the next steps!
 
 ## The Test Cases
 
