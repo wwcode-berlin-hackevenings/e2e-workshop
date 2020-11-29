@@ -14,6 +14,11 @@ Let's have a look at the testing pyramid first.
 
 
 Implement e2e tests with selenium
+
+### What is Selenium?
+
+### The Scenario
+
 defined test cases 
 run them against "the production page"
 run them against different version ("deployments") of the page
@@ -25,7 +30,7 @@ run them against different version ("deployments") of the page
 ## The Test Cases
 
 E2e tests can become very complex and implement multi-step user interactions. 
-But usually you start with the basics: The first case in every test suite should be a simple test to verify that yoir page even exists (or that your test suite is running properly and the tests can access the page).
+But usually you start with the basics: The first case in every test suite should be a simple test to verify that your page even exists (or that your test suite is running properly and the tests can access the page).
 
 ### Smoke Test: Verify the page loads
 
@@ -54,9 +59,13 @@ But usually you start with the basics: The first case in every test suite should
 ----
 ## Bonus Exercises
 
-### Test the comment feature
+### Test the adding cats feature
 
 ...
+
+### Test the "Not a Cat" Button
+
+Allows you to flag images that are not cats to get them removed.
 
 ### Test for no missing translations
 
