@@ -8,7 +8,23 @@ We will test a "real" website and make sure it works and keeps working as expect
 
 "But what are e2e tests?" you might ask yourself.
 Let's have a look at the testing pyramid first.
-...
+
+The testing pyramid is a way of thinking about the different types of automated tests and how they together create a balance and test an application from different perspectives and under different circumstances. 
+
+![](https://user-images.githubusercontent.com/615127/100665779-91221280-3358-11eb-87e0-384b32bdea86.png)
+
+* **Unit Tests**: Test individual components in isolation. They are usually small and fast.
+* **Integration Tests**: Test different components together and verify that they work well in orchestration.
+* **E2E Tests**: They test functionality as seen from the customer perspective by driving an application through its UI.
+
+The idea of the Testing Pyramid is to find the right balance between all types of tests in our test suite, by playing to the strength of each type of test while minimizing the downsides of each one.
+
+💡 We want to have _many more_ Unit Tests than E2E Tests.
+
+**References** 
+
+* [Testing Rails](https://books.thoughtbot.com/assets/testing-rails.pdf)
+* [https://martinfowler.com/bliki/TestPyramid.html](https://martinfowler.com/bliki/TestPyramid.html)
 
 ## What are we going to do?
 
