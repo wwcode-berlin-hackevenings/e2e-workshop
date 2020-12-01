@@ -33,10 +33,11 @@ Each team works together to implement the test cases described below - you can o
 We recommend you try [Mob Programming](https://team-coder.com/mob-programming/) - Pair Programming scaled up. This means you will take turn being the "driver" writing the code. 
 All other team members take on the "navigator" role, telling the driver what to type.
 If you don't feel comfortable typing, you don't have to.
+There are also other ways to organize your team: Someone has to look at the documentation, someone should have the browser inspector open...
 
 ### What is Selenium?
 
-Selenium is a tool to automate and control browsers. It's main use case is testing, but it can also be used to automate tasks.
+Selenium is a tool to automate and control browsers 🤖. It's main use case is testing, but it can also be used to automate tasks.
 The Selenium "family" consists of multiple different tools to help with the creation and execution of tests, for example an IDE.
 What we will be using today is **Selenium Webdriver**, a collection of binding for different programming languages that allow us to interact with the browser.
 This means we can use any of the supported programming languages and easily control the browser.
@@ -45,27 +46,27 @@ We will use this to define some user flows on our website - and then use a testi
 
 ### The Scenario
 
-During this workshop, you will take on the role of the QA (Quality Assurance) team of *Instacat* - a hot new startup in the cat social media space :cat.
-[Instacat](https://www.instacat.app) allows cats to share their cutest pictures with the world and collect likes.
+During this workshop, you will take on the role of the QA (Quality Assurance) team of *Instacat* - a hot new startup in the cat social media space 🐈.
+[Instacat](https://www.instacat.app) allows cats to share their cutest pictures with the world and collect likes 💜.
 
 Your job is to work through a list of test cases that have been defined by the product team
 Each test cases describes a different user flow that uses a feature of your product.
 
-One main reason why we write tests is to make sure new features or changes dion't break existing functionality.
+One main reason why we write tests is to make sure new features or changes didn't break existing functionality.
 This means you will run your tests against different "releases" of the instacat website - simulated by different versions.
 The instructions below will tell you when a new version is released and you should change the URL you are using in your tests!
 
 ## Setup
 
 If your are using **Javascript**, go to the [Javascript Selenium Template](https://github.com/wwcode-berlin-hackevenings/selenium-javascript-template) and create your own repo from it.
-Follow the instructions in th template repo to setup your local enviroment to be able to run the tests.
+Follow the instructions in the template repo to setup your local enviroment to be able to run the tests.
 If that does now work, the repo also has a Github Action workflow setup to run the tests as an Action.
 This is less fun though because you don't get to see the browser automation in action!
 
 As soon as you are able to run the example test, you are good to go for the next steps!
 The template repo also contains links to the documentation of Selenium for your language of choice and for the test framework.
 
-Some additional links:
+**Some additional links:**
 - [MDN: Document Query Selector](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector) - how to locate elements inside a website?
 - [Selenium Main Website](https://www.selenium.dev/)
 - [Guide to Browser Manipulation with Selenium](https://www.selenium.dev/documentation/en/webdriver/browser_manipulation/) - examples for different languages
@@ -78,7 +79,7 @@ The first case in every test suite should be a very simple test to verify that y
 
 ### Smoke Test: Verify the page loads
 
-1. Navigate to the Instacat website (https://www.instacat.app)[https://www.instacat.app]
+1. Navigate to the Instacat website https://www.instacat.app
 2. Verify that anything is loading: Pick an appropriate element and check if it exists on the website
 
 > Run your tests!
@@ -100,7 +101,7 @@ This time we want to look for very specific elements that should always be prese
 
 Now imagine a new version was deployed and some changes have been made to the website:
 
-> Update the URL in your test to () and run the tests again. Are all test cases still green?
+> Update the URL in your test to ???? and run the tests again. Are all test cases still green?
 
 *Tests fail for different reasons - sometimes because they are not robust against changes in the code*
 
@@ -122,9 +123,9 @@ Write a test case where the like button is clicked and we check that the like co
 
 > Run the test against the previous version of instacat
 
-> Again a deployment happened, so you need to run again against the new version () to verify that everything still works
+> Again a deployment happened, so you need to run again against the new version ???? to verify that everything still works
 
-*Sometimes tests fail because there is a bug :bug in our software - this is where they shine and where we want them to fail! It gives us a chance to fix the bug before it goes to production and affects our fluffy users.*
+*Sometimes tests fail because there is a bug 🐞 in our software - this is where they shine and where we want them to fail! It gives us a chance to fix the bug before it goes to production and affects our fluffy users.*
 
 **Tipps**
 - If you have found an element, you get back a Web Element: This object exposes different methods to allow you to interact with it.
