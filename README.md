@@ -101,7 +101,7 @@ This time we want to look for very specific elements that should always be prese
 
 Now imagine a new version was deployed and some changes have been made to the website:
 
-> Update the URL in your test to ???? and run the tests again. Are all test cases still green?
+> Update the URL in your test to https://v2.instacat.app/ and run the tests again. Are all test cases still green?
 
 *Tests fail for different reasons - sometimes because they are not robust against changes in the code*
 
@@ -123,7 +123,7 @@ Write a test case where the like button is clicked and we check that the like co
 
 > Run the test against the previous version of instacat
 
-> Again a deployment happened, so you need to run again against the new version ???? to verify that everything still works
+> Again a deployment happened, so you need to run again against the new version https://v3.instacat.app/ to verify that everything still works
 
 *Sometimes tests fail because there is a bug 🐞 in our software - this is where they shine and where we want them to fail! It gives us a chance to fix the bug before it goes to production and affects our fluffy users.*
 
