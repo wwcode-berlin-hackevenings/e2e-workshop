@@ -140,6 +140,8 @@ Congratulations, you were really fast! Here are a few bonus cases if you want to
 The page footer shows a Copyright notice.
 Make sure it is showing the current year and is not outdated!
 
+> You found another bug! Here is the new version that fixes it: https://v4.instacat.app/  Your tests should be green again!
+
 ### Test the adding cats feature (complex)
 
 One of the main features of instacat is adding new cats and their cute pictures.
@@ -149,5 +151,5 @@ Write a test case for the whole flow of adding a new cat with an image and verif
 
 Users can flag inappropriate content - anything that is not a cat. Instacat is just for cats after all!
 If the "Not a Cat" button is clicked, the questionable entry should be removed from the site.
-Write a test case for the whole flow of clikcing the button and checking that entry is gone afterwards.
+Write a test case for the whole flow of clicking the button and checking that entry is gone afterwards.
 
