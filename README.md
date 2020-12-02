@@ -58,7 +58,10 @@ The instructions below will tell you when a new version is released and you shou
 
 ## Setup
 
-If your are using **Javascript**, go to the [Javascript Selenium Template](https://github.com/wwcode-berlin-hackevenings/selenium-javascript-template) and create your own repo from it.
+Select the template for your programming language of choice and create your own repo from:
+- **Javascript**: [Javascript Selenium Template](https://github.com/wwcode-berlin-hackevenings/selenium-javascript-template)
+- **Python**: [Python Selenium Template](https://github.com/wwcode-berlin-hackevenings/selenium-python-template)
+
 Follow the instructions in the template repo to setup your local enviroment to be able to run the tests.
 If that does now work, the repo also has a Github Action workflow setup to run the tests as an Action.
 This is less fun though because you don't get to see the browser automation in action!
