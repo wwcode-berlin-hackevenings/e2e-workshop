@@ -1,7 +1,7 @@
 # e2e Testing Workshop
 
-In this workshop you will learn to write your first e2e tests with Selenium.
-We will test a "real" website and make sure it works and keeps working as expected.
+In this workshop you will learn how to write your first e2e tests with Selenium.
+We will test a "real" website, making sure it works and keeps working as expected.
 
 
 ## The Testing Pyramid
@@ -9,17 +9,17 @@ We will test a "real" website and make sure it works and keeps working as expect
 "But what are e2e tests?" you might ask yourself.
 Let's have a look at the testing pyramid first.
 
-The testing pyramid is a way of thinking about the different types of automated tests and how they together create a balance and test an application from different perspectives and under different circumstances. 
+The testing pyramid is a way of thinking about the different types of automated tests and how together they create a balance, testing an application from different perspectives and under different circumstances. 
 
 ![](https://user-images.githubusercontent.com/615127/100665779-91221280-3358-11eb-87e0-384b32bdea86.png)
 
 * **Unit Tests**: Test individual components in isolation. They are usually small and fast.
 * **Integration Tests**: Test different components together and verify that they work well in orchestration.
-* **E2E Tests**: They test functionality as seen from the customer perspective by driving an application through its UI.
+* **E2E Tests**: Test functionality as seen from the customer perspective by driving an application through its UI.
 
 The idea of the Testing Pyramid is to find the right balance between all types of tests in our test suite, by playing to the strength of each type of test while minimizing the downsides of each one.
 
-💡 We want to have _many more_ Unit Tests than E2E Tests.
+💡 We want to have _far more_ Unit Tests than E2E Tests.
 
 **References** 
 
@@ -29,16 +29,16 @@ The idea of the Testing Pyramid is to find the right balance between all types o
 ## What are we going to do in this workshop?
 
 In this workshop we will work in small teams to create a small e2e test suite with Selenium Webdriver.
-Each team works together to implement the test cases described below - you can organize yourselfs however you like.
-We recommend you try [Mob Programming](https://team-coder.com/mob-programming/) - Pair Programming scaled up. This means you will take turn being the "driver" writing the code. 
-All other team members take on the "navigator" role, telling the driver what to type.
-If you don't feel comfortable typing, you don't have to.
+Each team works together to implement the test cases described below - you can organize yourselves however you like.
+We recommend you try [Mob Programming](https://team-coder.com/mob-programming/) - Pair Programming scaled up. 
+One team member will be the "driver" writing the code. All the other team members take on the "navigator" role, telling the driver what to type. 
+Take turns being the "driver". If you don't feel comfortable typing, you don't have to.
 There are also other ways to organize your team: Someone has to look at the documentation, someone should have the browser inspector open...
 
 ### What is Selenium?
 
 Selenium is a tool to automate and control browsers 🤖. It's main use case is testing, but it can also be used to automate tasks.
-The Selenium "family" consists of multiple different tools to help with the creation and execution of tests, for example an IDE.
+The Selenium "family" consists of several different tools to help with the creation and execution of tests, for example an IDE.
 What we will be using today is **Selenium Webdriver**, a collection of binding for different programming languages that allow us to interact with the browser.
 This means we can use any of the supported programming languages and easily control the browser.
 
@@ -49,10 +49,10 @@ We will use this to define some user flows on our website - and then use a testi
 During this workshop, you will take on the role of the QA (Quality Assurance) team of *Instacat* - a hot new startup in the cat social media space 🐈.
 [Instacat](https://www.instacat.app) allows cats to share their cutest pictures with the world and collect likes 💜.
 
-Your job is to work through a list of test cases that have been defined by the product team
+Your job is to work through a list of test cases that have been defined by the product team.
 Each test cases describes a different user flow that uses a feature of your product.
 
-One main reason why we write tests is to make sure new features or changes didn't break existing functionality.
+One main reason that we write tests is to make sure new features or changes didn't break existing functionality.
 This means you will run your tests against different "releases" of the instacat website - simulated by different versions.
 The instructions below will tell you when a new version is released and you should change the URL you are using in your tests!
 
@@ -63,11 +63,11 @@ Select the template for your programming language of choice and create your own 
 - **Python**: [Python Selenium Template](https://github.com/wwcode-berlin-hackevenings/selenium-python-template)
 
 Follow the instructions in the template repo to setup your local enviroment to be able to run the tests.
-If that does now work, the repo also has a Github Action workflow setup to run the tests as an Action.
-This is less fun though because you don't get to see the browser automation in action!
+If that does not work, the repo also has a GitHub Action workflow setup to run the tests as an Action.
+This is less fun though, because you don't get to see the browser automation in action!
 
 As soon as you are able to run the example test, you are good to go for the next steps!
-The template repo also contains links to the documentation of Selenium for your language of choice and for the test framework.
+The template repo also contains links to the Selenium documentation for your language of choice and for the test framework.
 
 **Some additional links:**
 - [MDN: Document Query Selector](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector) - how to locate elements inside a website?
@@ -87,7 +87,7 @@ The first case in every test suite should be a very simple test to verify that y
 
 > Run your tests!
 
-**Tipps**
+**Tips**
 - Look for the "get" method of the webdriver class to navigate to a URL
 - Your test can check different things, one option could be to find a certain element
 
@@ -108,7 +108,7 @@ Now imagine a new version was deployed and some changes have been made to the we
 
 *Tests fail for different reasons - sometimes because they are not robust against changes in the code*
 
-**Tipps**
+**Tips**
 - You might want to extract the URL to a variable so you don't have to change it for all your test cases after each deployment.
 - You can use the find element function to look for specific HTML elements on a page
 - There is a special function to check the value of the page title
@@ -130,13 +130,13 @@ Write a test case where the like button is clicked and we check that the like co
 
 *Sometimes tests fail because there is a bug 🐞 in our software - this is where they shine and where we want them to fail! It gives us a chance to fix the bug before it goes to production and affects our fluffy users.*
 
-**Tipps**
+**Tips**
 - If you have found an element, you get back a Web Element: This object exposes different methods to allow you to interact with it.
 
 ----
 ## Bonus Exercises
 
-Congratulations, you were really fast! Here are a few bonus cases if you want to write some more tests
+Congratulations, you were really fast! Here are a few bonus cases if you want to write some more tests.
 
 ### Check if the Copyright year is correct (easy)
 
