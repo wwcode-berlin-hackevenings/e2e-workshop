@@ -29,6 +29,9 @@ The idea of the Testing Pyramid is to find the right balance between all types o
 ## What are we going to do in this workshop?
 
 In this workshop we will work in small teams to create a small e2e test suite with Selenium Webdriver.
+
+### Team Work!
+
 Each team works together to implement the test cases described below - you can organize yourselves however you like.
 We recommend you try [Mob Programming](https://team-coder.com/mob-programming/) - Pair Programming scaled up. 
 One team member will be the "driver" writing the code. All the other team members take on the "navigator" role, telling the driver what to type. 
@@ -44,7 +47,7 @@ This means we can use any of the supported programming languages and easily cont
 
 We will use this to define some user flows on our website - and then use a testing library to check if the results are as expected.
 
-### The Scenario
+### The Workshop Scenario
 
 During this workshop, you will take on the role of the QA (Quality Assurance) team of *Instacat* - a hot new startup in the cat social media space 🐈.
 [Instacat](https://www.instacat.app) allows cats to share their cutest pictures with the world and collect likes 💜.
@@ -56,6 +59,9 @@ One main reason that we write tests is to make sure new features or changes didn
 This means you will run your tests against different "releases" of the instacat website - simulated by different versions.
 The instructions below will tell you when a new version is released and you should change the URL you are using in your tests!
 
+> We suggest that you start off the workshop by getting to know your new team a little!
+> Tell everyone who you are, what your experience is with coding and testing and about a cat in your life!
+
 ## Setup
 
 Select the template for your programming language of choice and create your own repo from:
@@ -63,10 +69,10 @@ Select the template for your programming language of choice and create your own 
 - **Python**: [Python Selenium Template](https://github.com/wwcode-berlin-hackevenings/selenium-python-template)
 
 Follow the instructions in the template repo to setup your local enviroment to be able to run the tests.
-If that does not work, the repo also has a GitHub Action workflow setup to run the tests as an Action.
+If that does not work, the (Javascript) repo also has a GitHub Action workflow setup to run the tests as an Action.
 This is less fun though, because you don't get to see the browser automation in action!
 
-As soon as you are able to run the example test, you are good to go for the next steps!
+As soon as you are able to run the example test, you are ready to proceed to the next steps!
 The template repo also contains links to the Selenium documentation for your language of choice and for the test framework.
 
 **Some additional links:**
@@ -74,39 +80,56 @@ The template repo also contains links to the Selenium documentation for your lan
 - [Selenium Main Website](https://www.selenium.dev/)
 - [Guide to Browser Manipulation with Selenium](https://www.selenium.dev/documentation/en/webdriver/browser_manipulation/) - examples for different languages
 
+> Make sure your team has at least one person who can run the example test successfully and can also share their screen. If that is all set up, you are good to proceed to the next step!
+> We recommend you also make sure everyone on your team understands what is happening in the example test before you start writing your own!
+
 ## The Test Cases
+
+We have described a few test cases below, starting from very basic with no interactions and increasing in complexity.
+Feel free to go through them one by one or skip ahead!
+
+
+### Smoke Test: Verify the page loads
 
 E2e tests can become very complex and implement multi-step user interactions. 
 But usually you start with the basics: 
 The first case in every test suite should be a very simple test to verify that your page even loads at all (or that your test suite is running properly and the tests can access the page).
 
-### Smoke Test: Verify the page loads
+1. Use selenium to navigate to the Instacat website https://www.instacat.app
+2. Verify that anything is loading: You can for example select an appropriate element with selenium and check if it exists on the website using the testing library
 
-1. Navigate to the Instacat website https://www.instacat.app
-2. Verify that anything is loading: Pick an appropriate element and check if it exists on the website
+> Run your new test case and see if it is successful (green)
 
-> Run your tests!
+Congratulations! You have written your first test! 🙌
 
 **Tips**
 - Look for the "get" method of the webdriver class to navigate to a URL
-- Your test can check different things, one option could be to find a certain element
+- Your test can check for the existence of a certain element on the page, but there are also other options available. 
 
 ### Check basic elements
 
-This time we want to look for very specific elements that should always be present on our website.
+In this test case we want to look for specific HTML elements that should always be present on our website.
 
-1. Navigate to the Instacat website
-2. Check if the h1 element (the headline "Instacat") exists on the page
-3. Bonus: check if there are any images on the page (we expect at least one image)
-4. Bonus: check if the title meta tag is set correctly
+1. Use selenium to navigate to the Instacat website
+2. Check if the h1 element (the headline "Instacat") exists on the page (use selenium to select it and the testing library to assert that it exists)
+3. Bonus: Check if there are any images on the page (we expect at least one image)
+4. Bonus: Check if the title meta tag is set correctly (we expect it to be "Instacat")
 
 > Run your test against the first version of the website from the previous test case
 
-Now imagine a new version was deployed and some changes have been made to the website:
+If everything is green, congratulations again - you already finished 2 test cases!
 
+> Now imagine a new version of the Instacat website was deployed and some changes have been made to the website
 > Update the URL in your test to https://v2.instacat.app/ and run the tests again. Are all test cases still green?
 
-*Tests fail for different reasons - sometimes because they are not robust against changes in the code*
+<details> 
+  <summary>What has changed in this new version? </summary>
+   *Tests fail for different reasons - sometimes because they are not robust against changes in the code*
+  In this case, the only thing that changed are some CSS classes. If you used those to find the elements, your test might fail, even though the functionality of the site is unchanged.
+Depending on the project it can be a bad choice to use CSS classnames as selectors, if those classes might change at any point. 
+  A good way to select is a `data-test-id` attribute (when it is available).
+</details>
+
 
 **Tips**
 - You might want to extract the URL to a variable so you don't have to change it for all your test cases after each deployment.
