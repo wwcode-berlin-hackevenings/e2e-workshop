@@ -102,7 +102,7 @@ The first case in every test suite should be a very simple test to verify that y
 
 Congratulations! You have written your first test! 🙌
 
-** 💡 Tips**
+ 💡 **Tips**
 - Look for the "get" method of the webdriver class to navigate to a URL
 - Your test can check for the existence of a certain element on the page, but there are also other options available. 
 - The browser dev tools with the inspector are your best friends 👫
@@ -124,8 +124,9 @@ If everything is green, congratulations again - you already finished 2 test case
 > Update the URL in your test to https://v2.instacat.app/ and run the tests again. Are all test cases still green?
 
 <details> 
-  <summary>Why is my test failing now?</summary>
+  <summary><i>Why is my test failing now?</i></summary>
    Tests fail for different reasons - sometimes because they are not robust against changes in the code. We want our tests to only fail when the functionality has changed / is broken. We try to write them in a way that they are robust against non-functional changes.
+  
   
   In this case, the only thing that changed are some CSS classes. If you used those to find the elements, your test might fail, even though the functionality of the site is unchanged.
 Depending on the project it can be a bad choice to use CSS classnames as selectors, if those classes might change frequently. 
@@ -133,7 +134,7 @@ Depending on the project it can be a bad choice to use CSS classnames as selecto
 </details>
 
 
-** 💡 Tips**
+ 💡 **Tips**
 - You might want to extract the URL to a variable so you don't have to change it for all your test cases after each deployment.
 - You can use the find element function to look for specific HTML elements on a page
 - There is a special function to check the value of the page title
@@ -165,7 +166,7 @@ Sometimes tests fail because there is a bug 🐞 in our software - this is where
 </details>
 
 
-** 💡 Tips**
+ 💡 **Tips**
 - If you have found an element, you get back a Web Element: This object exposes different methods to allow you to interact with it.
 
 ----
@@ -182,7 +183,7 @@ Make sure it is showing the current year and is not outdated!
 
 <details> 
   <summary>Why is my test failing? </summary>
-You found another bug - again your test suite saves the day!
+You found another bug: The date was from last year. Again your test suite saves the day!
 </details>
 
 > Your tests found two bugs already. Luckily the developers have deployed a new version that fixes both those issues: https://v4.instacat.app/  
@@ -196,8 +197,8 @@ Write a test case for the whole flow of adding a new cat with an image and verif
 For this test you need to interact with the form fields, enter values and submit them.
 Wait until the new entry has been added to the page and check if your new cat is showing up.
 
-** 💡 Tips**
-- Usually an interaction like adding a new element takes a while because the request has to be sent to a server and the page has to wait for a response. So you might have to make sure your test waits a little until the server response has arrived before checking for the new cat entry.
+ 💡 **Tips**
+ - Usually an interaction like adding a new element takes a while because the request has to be sent to a server and the page has to wait for a response. So you might have to make sure your test waits a little until the server response has arrived before checking for the new cat entry.
 
 ### Test the "Not a Cat" Button
 
