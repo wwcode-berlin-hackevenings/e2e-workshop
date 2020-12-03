@@ -156,8 +156,9 @@ If everything is green, we can be confident that our test suite will alert us wh
 
 > Imagine that another deployment happened, so you need to run your tests against the new version https://v3.instacat.app/ to verify that everything still works
 
+
 <details> 
-  <summary>Why is my test failing? </summary>
+  <summary><i>Why is my test failing now?</i> </summary>
 Sometimes tests fail because there is a bug 🐞 in our software - this is where they shine and where we want them to fail! It gives us a chance to fix the bug before it goes to production and affects our fluffy users.
   
   In this version, a bug was introduced to the like feature - you should be able to see it easily when you do a manual test.
@@ -182,7 +183,7 @@ Make sure it is showing the current year and is not outdated!
 > Run your test against the previous version 3 and see what happens (you can probably tell what happens from looking at the website...)
 
 <details> 
-  <summary>Why is my test failing? </summary>
+  <summary><i>Why is my test failing now?</i></summary>
 You found another bug: The date was from last year. Again your test suite saves the day!
 </details>
 
