@@ -102,9 +102,10 @@ The first case in every test suite should be a very simple test to verify that y
 
 Congratulations! You have written your first test! 🙌
 
-**Tips**
+** 💡 Tips**
 - Look for the "get" method of the webdriver class to navigate to a URL
 - Your test can check for the existence of a certain element on the page, but there are also other options available. 
+- The browser dev tools with the inspector are your best friends 👫
 
 ### Check basic elements
 
@@ -123,15 +124,16 @@ If everything is green, congratulations again - you already finished 2 test case
 > Update the URL in your test to https://v2.instacat.app/ and run the tests again. Are all test cases still green?
 
 <details> 
-  <summary>What has changed in this new version? </summary>
-   *Tests fail for different reasons - sometimes because they are not robust against changes in the code*
+  <summary>Why is my test failing now?</summary>
+   Tests fail for different reasons - sometimes because they are not robust against changes in the code. We want our tests to only fail when the functionality has changed / is broken. We try to write them in a way that they are robust against non-functional changes.
+  
   In this case, the only thing that changed are some CSS classes. If you used those to find the elements, your test might fail, even though the functionality of the site is unchanged.
-Depending on the project it can be a bad choice to use CSS classnames as selectors, if those classes might change at any point. 
-  A good way to select is a `data-test-id` attribute (when it is available).
+Depending on the project it can be a bad choice to use CSS classnames as selectors, if those classes might change frequently. 
+  A good way to select an element is a special data-test-id attribute (when it is available).
 </details>
 
 
-**Tips**
+** 💡 Tips**
 - You might want to extract the URL to a variable so you don't have to change it for all your test cases after each deployment.
 - You can use the find element function to look for specific HTML elements on a page
 - There is a special function to check the value of the page title
@@ -141,19 +143,29 @@ Depending on the project it can be a bad choice to use CSS classnames as selecto
 All that the cats of Instacat want are likes! The like feature is really important, so we want to be sure it works.
 Write a test case where the like button is clicked and we check that the like counter has in fact increased.
 
-1. Navigate to the Instacat website
-2. Find the like counter (of any cat) and store its value
+1. Navigate to the Instacat website using selenium
+2. Find the like counter (of any cat) with selenium and store its value
 3. Find the like button (of the same cat!)
-4. Click the like button
+4. Click the like button using selenium
 5. Check the value of the like counter again - is it higher than before?
 
-> Run the test against the previous version of instacat
+> Run the test against the previous version of instacat https://v2.instacat.app/
 
-> Again a deployment happened, so you need to run again against the new version https://v3.instacat.app/ to verify that everything still works
+If everything is green, we can be confident that our test suite will alert us when a change break this core feature of Instacat!
 
-*Sometimes tests fail because there is a bug 🐞 in our software - this is where they shine and where we want them to fail! It gives us a chance to fix the bug before it goes to production and affects our fluffy users.*
+> Imagine that another deployment happened, so you need to run your tests against the new version https://v3.instacat.app/ to verify that everything still works
 
-**Tips**
+<details> 
+  <summary>Why is my test failing? </summary>
+Sometimes tests fail because there is a bug 🐞 in our software - this is where they shine and where we want them to fail! It gives us a chance to fix the bug before it goes to production and affects our fluffy users.
+  
+  In this version, a bug was introduced to the like feature - you should be able to see it easily when you do a manual test.
+  
+  So in this case the failing test was a good thing! It alerted us to a bug in the software that we can fix now.
+</details>
+
+
+** 💡 Tips**
 - If you have found an element, you get back a Web Element: This object exposes different methods to allow you to interact with it.
 
 ----
@@ -166,12 +178,26 @@ Congratulations, you were really fast! Here are a few bonus cases if you want to
 The page footer shows a Copyright notice.
 Make sure it is showing the current year and is not outdated!
 
-> You found another bug! Here is the new version that fixes it: https://v4.instacat.app/  Your tests should be green again!
+> Run your test against the previous version 3 and see what happens (you can probably tell what happens from looking at the website...)
+
+<details> 
+  <summary>Why is my test failing? </summary>
+You found another bug - again your test suite saves the day!
+</details>
+
+> Your tests found two bugs already. Luckily the developers have deployed a new version that fixes both those issues: https://v4.instacat.app/  
+
+Your tests should be green again.
 
 ### Test the adding cats feature (complex)
 
 One of the main features of instacat is adding new cats and their cute pictures.
 Write a test case for the whole flow of adding a new cat with an image and verify this cat is shown on the website.
+For this test you need to interact with the form fields, enter values and submit them.
+Wait until the new entry has been added to the page and check if your new cat is showing up.
+
+** 💡 Tips**
+- Usually an interaction like adding a new element takes a while because the request has to be sent to a server and the page has to wait for a response. So you might have to make sure your test waits a little until the server response has arrived before checking for the new cat entry.
 
 ### Test the "Not a Cat" Button
 
